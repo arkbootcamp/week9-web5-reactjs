@@ -20,8 +20,12 @@ class Home extends Component {
           description: 'hslwerwer',
           price: 8000
         }
-      ]
+      ],
+      idUser: '123123',
     }
+  }
+  handleDeleteProduct=(id)=>{
+    console.log('delete product apa ' + id + 'id usernya '+ this.state.idUser);
   }
 
   render() {
@@ -30,7 +34,7 @@ class Home extends Component {
       <div>
         <h1>halaman home</h1>
         {this.state.foods.map((food, index)=>
-          food.price > 5000 && <Card title={food.name} description={food.description} price={food.price} key={index} />
+          food.price > 5000 && <Card title={food.name} description={food.description} price={food.price} key={index} deleteProduct = {this.handleDeleteProduct} />
         )}
       </div>
     )

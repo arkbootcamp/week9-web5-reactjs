@@ -4,9 +4,10 @@ import About from './page/About'
 import Detail from './page/Detail'
 import Home from './page/Home'
 import Form from './page/Form'
+import Auth from './page/Auth/Index'
 
 function App() {
-  const isLogin = false
+  const isLogin = true
   return (
     <BrowserRouter>
     <Switch>
@@ -14,6 +15,7 @@ function App() {
       <Route path="/about" render={(props)=> isLogin ? <About {...props} />: <Redirect to="/"/>} />
       <Route path="/detail/:id" component={Detail}/>
         <Route path="/form" exact component={Form} />
+      <Route path="/auth" component={Auth} />
     </Switch>
     </BrowserRouter>
   )
